@@ -1,0 +1,17 @@
+#!/bin/bash
+#
+# ARG_HELP([new-wp help])
+# ARG_POSITIONAL_SINGLE([domain], [The URL of your dev website])
+# ARG_OPTIONAL_SINGLE([email], [e], [Your email address], [keven@arsenalweb.ca])
+# ARG_OPTIONAL_SINGLE([locale], [l], [WordPress locale], [fr_FR])
+# ARG_OPTIONAL_SINGLE([wordpress_username], [u], [WordPress admin username], [arsenalweb])
+# ARG_VERSION([echo $0 v0.1])
+# ARGBASH_GO
+# [ <-- needed because of Argbash
+
+echo "Value of domain: $_arg_domain"
+echo "Value of email: $_arg_email"
+echo "Value of locale: $_arg_locale"
+echo "Value of wordpress_username: $_arg_wordpress_username"
+
+# ] <-- needed because of Argbash
