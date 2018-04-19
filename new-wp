@@ -176,8 +176,8 @@ else
 fi
 
 # Create mySQL database
-dbname=$username"_wpbd"
-dbuser=$username"_wpus"
+dbname=${username:0:8}"_wpbd"
+dbuser=${username:0:8}"_wpus"
 dbpassword=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1)
 echo -e "---- Creating mySQL database ($dbname) in new cPanel account"
 uapi --user=$username Mysql create_database name=$dbname > /dev/null
