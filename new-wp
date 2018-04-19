@@ -168,9 +168,9 @@ echo -e "---- Creating new cPanel account for $_arg_domain"
 CREATE_ACCT=$(whmapi1 createacct username=$username domain=$_arg_domain plan=KevDev featurelist=default quota=0 password=$password ip=n cgi=0 hasshell=1 contactemail=$_arg_email cpmod=paper_lantern maxftp=unlimited maxsql=unlimited maxpop=unlimited maxlst=unlimited maxsub=unlimited maxpark=unlimited maxaddon=unlimited bwlimit=unlimited language=en useregns=1 hasuseregns=1 reseller=0 forcedns=1 mxcheck=local max_email_per_hour=500 max_defer_fail_percentage=80)
 
 if (( $(echo "$CREATE_ACCT" | grep -iq "reason: Account Creation Ok"; echo "$?") == 0 )); then
-    echo -e "---- Account created succesfully"
+    echo -e "---- Account created succesfully ($username)"
 else
-    echo -e "---- Got an error while creating account"
+    echo -e "---- Got an error while creating account '$username'"
     echo -e "\n$CREATE_ACCT"
     exit 1
 fi
